@@ -1,17 +1,15 @@
 import React from 'react';
+import { usePlayerContext } from '../../context/usePlayerContext';
 
-type AutoplayToggleProps = {
-  value: boolean;
-  onChange: (newValue: boolean) => void;
-};
+export const AutoplayToggle:  React.FC = () => {
+  const { autoplay, setAutoplay } = usePlayerContext();
 
-export const AutoplayToggle: React.FC<AutoplayToggleProps> = ({ value, onChange }) => {
   return (
-    <label className="autoplay-toggle">
+    <label className='autoplay-toggle'>
       <input
-        type="checkbox"
-        checked={value}
-        onChange={(e) => onChange(e.target.checked)}
+        type='checkbox'
+        checked={autoplay}
+        onChange={(e) => setAutoplay(e.target.checked)}
       />
       Autoplay on station click
     </label>

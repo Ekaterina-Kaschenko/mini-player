@@ -1,38 +1,30 @@
 import { useEffect, useState } from 'react';
 import { fetchStations } from './api/stations';
-import { Station } from './types/stations';
 import { Content } from './components/Content/Content';
 import { AutoplayToggle } from './components/AutoplayToggle/AutoplayToggle';
+import { usePlayerContext } from './context/usePlayerContext';
 
 import './App.css';
 
 function App() {
-  const [stations, setStations] = useState<Station[]>([]);
-  const [selectedStation, setSelectedStation] = useState<Station | null>(null);
+  const { setStations } = usePlayerContext();
   const [loading, setLoading] = useState(true);
-  const [autoplay, setAutoplay] = useState(true);
 
   useEffect(() => {
     fetchStations()
       .then((data) => {
         setStations(data);
       })
-      .catch(console.error)
+      .catch(console.error) // todo: show the error for user
       .finally(() => setLoading(false));
-  }, []);
-  
+  }, [setStations]);
+
   return (
     <div className='main'>
-      <h1 className="page-title">Mini TuneIn Player</h1>
-      <AutoplayToggle value={autoplay} onChange={setAutoplay} />
-
+      <h1 className='page-title'>Mini TuneIn Player</h1>
+      <AutoplayToggle />
       {loading && <p>Loading stations...</p>}
-      <Content
-        stations={stations}
-        selectedStation={selectedStation}
-        onSelectStation={setSelectedStation}
-        autoplay={autoplay}
-      />
+      <Content />
     </div>
   );
 }
