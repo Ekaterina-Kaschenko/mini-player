@@ -41,13 +41,13 @@ npm run dev
 
 The app will be available at http://localhost:5173.
 
-# Potential Improvements (Given More Time)
+## Potential Improvements (Given More Time)
 
 Enhancements that could improve the functionality, maintainability, and accessibility of the Mini TuneIn Player application, if more development time were available.
 
 ---
 
-## 1. Scoped Styling & CSS Management
+### 1. Scoped Styling & CSS Management
 
 Currently, some class name collisions may occur due to shared or global styles. To avoid conflicts and improve scalability, the following styling strategies could be adopted:
 
@@ -59,7 +59,7 @@ Currently, some class name collisions may occur due to shared or global styles. 
 
 ---
 
-## 2. Error Handling & User Feedback
+### 2. Error Handling & User Feedback
 
 The current version of the app does not provide any visible feedback if a radio station fails to load. Future improvements in this area could include:
 
@@ -70,7 +70,7 @@ The current version of the app does not provide any visible feedback if a radio 
 
 ---
 
-## 3. Responsive Design
+### 3. Responsive Design
 
 At present, the app is optimized for desktop viewports. To ensure usability across all devices, it should be adapted for various screen sizes, including:
 
@@ -82,7 +82,7 @@ Responsive improvements could involve using media queries, a CSS framework like 
 
 ---
 
-## 4. Keyboard Accessibility (Key Navigation)
+### 4. Keyboard Accessibility (Key Navigation)
 
 Improving keyboard accessibility would make the app usable by a wider audience, including users who rely on keyboard navigation. Enhancements could include:
 
