@@ -2,6 +2,8 @@
 
 This is a test task for **TuneIn**, showcasing a single-page radio streaming application built with React and TypeScript. The app allows users to browse and play various internet radio stations.
 
+![image](https://github.com/user-attachments/assets/05314912-26d9-41bf-a755-917f2a4672e3)
+
 ## Overview
 
 The application allows users to:
