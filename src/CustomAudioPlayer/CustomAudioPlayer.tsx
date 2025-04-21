@@ -9,6 +9,7 @@ import './CustomAudioPlayer.css';
 import { usePlayerContext } from '../context/usePlayerContext';
 import { Controls } from './components/Controls';
 import { VolumeControl } from './components/VolumeControl';
+import { Audio } from './components/Audio';
 import { PlayAnimation } from './components/PlayAnimation';
 
 
@@ -80,10 +81,7 @@ export const CustomAudioPlayer = forwardRef<HTMLAudioElement, CustomAudioPlayerP
           setSelectedStation={setSelectedStation}
         />
         <VolumeControl volume={volume} onChange={setVolume} />
-        <audio key={src} ref={internalRef}>
-          <source src={src} type='audio/mpeg' />
-          Your browser does not support the audio element.
-        </audio>
+        <Audio src={src} audioRef={internalRef} />
       </div>
     );
   }
