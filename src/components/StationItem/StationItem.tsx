@@ -11,11 +11,13 @@ type Station = {
 
 type StationItemProps = {
   station: Station;
+  onClick?: () => void;
 };
 
-export const StationItem: React.FC<StationItemProps> = ({ station }) => {
+export const StationItem: React.FC<StationItemProps> = ({ station, onClick }) => {
+  
   return (
-    <div className="item">
+    <div className="item" onClick={onClick}>
       <img className="image" src={station.imgUrl} alt={station.name} />
       <h2 className="name">{station.name}</h2>
     </div>

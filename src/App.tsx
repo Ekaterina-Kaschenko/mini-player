@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
 import { fetchStations } from './api/stations';
-import { StationList } from './components/StationList/StationList';
-import './App.css';
 import { Station } from './types/stations';
+import { Content } from './components/Content/Content';
+import { AutoplayToggle } from './components/AutoplayToggle/AutoplayToggle';
 
+import './App.css';
 
 function App() {
   const [stations, setStations] = useState<Station[]>([]);
+  const [selectedStation, setSelectedStation] = useState<Station | null>(null);
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    console.log('stations', stations);
-  }, [stations]);
+  const [autoplay, setAutoplay] = useState(true);
 
   useEffect(() => {
     fetchStations()
@@ -25,8 +24,15 @@ function App() {
   return (
     <div className='main'>
       <h1 className="page-title">Mini TuneIn Player</h1>
+      <AutoplayToggle value={autoplay} onChange={setAutoplay} />
+
       {loading && <p>Loading stations...</p>}
-      <StationList stations={stations} />
+      <Content
+        stations={stations}
+        selectedStation={selectedStation}
+        onSelectStation={setSelectedStation}
+        autoplay={autoplay}
+      />
     </div>
   );
 }
