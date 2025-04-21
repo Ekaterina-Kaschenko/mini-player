@@ -1,3 +1,28 @@
 .content {
   display: flex;
 }
+
+.station-placeholder {
+  height: 100px;
+  text-align: center;
+  padding: 40px 20px;
+  border: 2px dashed #ccc;
+  border-radius: 16px;
+  margin: 24px auto;
+  max-width: 600px;
+  background: #fafafa;
+  color: #666;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.station-placeholder h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.station-placeholder p {
+  font-size: 16px;
+  color: #888;
+}

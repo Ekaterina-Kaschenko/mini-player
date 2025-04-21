@@ -7,7 +7,7 @@ import { usePlayerContext } from './context/usePlayerContext';
 import './App.css';
 
 function App() {
-  const { setStations } = usePlayerContext();
+  const { setStations, setSelectedStation } = usePlayerContext();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function App() {
       })
       .catch(console.error) // todo: show the error for user
       .finally(() => setLoading(false));
-  }, [setStations]);
+  }, [setStations, setSelectedStation]);
 
   return (
     <div className='main'>
