@@ -22,7 +22,6 @@ The application allows users to:
 - **Vite** – fast frontend tooling for development
 - **React** – component-based UI framework
 - **TypeScript** – static type checking
-- **CSS Modules** – scoped styling for components
 
 ## Getting Started
 
