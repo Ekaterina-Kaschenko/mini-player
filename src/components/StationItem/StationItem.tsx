@@ -5,14 +5,18 @@ import { Station } from '../../types/stations';
 
 type StationItemProps = {
   station: Station;
-  onClick?: () => void;
 };
 
 export const StationItem: React.FC<StationItemProps> = ({ station }) => {
-  const { setSelectedStation } = usePlayerContext();
+  const { setSelectedStation, selectedStation } = usePlayerContext();
+
+  const isSelected = selectedStation?.id === station.id;
 
   return (
-    <div className='item' onClick={() => setSelectedStation(station)}>
+    <div
+      className={`item ${isSelected ? 'selected' : ''}`}
+      onClick={() => setSelectedStation(station)}
+    >
       <img className='image' src={station.imgUrl} alt={station.name} />
       <h2 className='name'>{station.name}</h2>
     </div>
